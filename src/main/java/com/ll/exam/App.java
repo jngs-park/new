@@ -4,12 +4,17 @@ import java.util.Scanner;
 
 public class App {
     public void run() {
+
+        int wiseSayinglastId = 0;
+
         System.out.println("명언 ssg");
 
         Scanner sc = new Scanner(System.in);
 
         outer:
         while (true) {
+
+
             System.out.printf("명령) ");
             String cmd = sc.nextLine().trim();
 
@@ -19,7 +24,8 @@ public class App {
                     String content = sc.nextLine().trim();
                     System.out.printf("작가 : ");
                     String author = sc.nextLine().trim();
-                    System.out.printf("1번 명언이 등록되었습니다. \n");
+                    int id = ++wiseSayinglastId; //등록시 글 번호 증가
+                    System.out.printf("%d번 명언이 등록되었습니다. \n", id);
                     break;
 
                 case "종료":
